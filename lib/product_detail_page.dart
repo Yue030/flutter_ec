@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_ec/model/image_placeholder.dart';
+import 'package:flutter_ec/widget/image_placeholder.dart';
 import 'package:flutter_ec/model/product.dart';
 import 'package:flutter_ec/shopping_car_page.dart';
 import 'package:flutter_ec/util/http_util.dart';
@@ -33,7 +33,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     _pages = List.generate(_medias.length, (index) {
       return GestureDetector(
         onTap: () async {
-          final result = await Navigator.push(this.context, PageRouteBuilder(
+          final result = await Navigator.push(context, PageRouteBuilder(
               pageBuilder: (context, animation, secondaryAnimation) => ImageFullScreen(product: widget.product, index: index,),
               transitionsBuilder: (context, animation, secondaryAnimation, child) {
                 var tween = Tween(

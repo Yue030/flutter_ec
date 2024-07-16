@@ -59,7 +59,6 @@ class _ProductListState extends State<ProductList> {
                 ),
               ),
               Row(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.end, children: [
-
                 IconButton(onPressed: isGridMode ? null : () { setState(() {
                   isGridMode = true;
                 }); }, icon: const Icon(Icons.image), disabledColor: Colors.black, color: Colors.grey,),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ec/widget/fade_in_network_image.dart';
 
-import '../model/image_placeholder.dart';
+import 'image_placeholder.dart';
 import '../model/product.dart';
 import '../product_detail_page.dart';
 
@@ -29,7 +29,8 @@ class _ProductListWidgetState extends State<ProductListWidget> {
               child: SizedBox(
                 width: 64,
                 height: 64,
-                child: item.medias.first.fileAgentData.mimeType.startsWith("image/") ? FadeInNetworkImage(url: item.medias.first.fileAgentData.url, fit: BoxFit.contain,) : const ImagePlaceholder(),
+                child: item.medias.first.fileAgentData.mimeType.startsWith("image/") ? FadeInNetworkImage(url: item.medias.first.fileAgentData.url, fit: BoxFit.contain,)
+                    : const ImagePlaceholder(),
               )
           ),
           title: Text(item.name, maxLines: 2, overflow: TextOverflow.ellipsis,),

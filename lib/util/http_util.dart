@@ -15,7 +15,8 @@ import '../model/shopping_car.dart';
 class HttpUtil {
   late Dio _dio;
 
-  final baseUrl = "http://192.168.0.241:5000/";
+  String baseUrl = "http://172.20.10.3:5000/";
+  // final baseUrl = "http://192.168.0.241:5000/";
 
   HttpUtil(BuildContext context) {
     _dio = Dio(BaseOptions(
@@ -158,7 +159,12 @@ class AuthInterceptor extends Interceptor {
       return;
     }
 
-    if (err.response?.statusCode == 401 && err.response?.data["result_code"] != "email_or_password_incorrect") {
+    if (err.response?.statusCode == 401) {
+      if (err.response?.data["result_code"] == "email_or_password_incorrect") {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("帳號或密碼錯誤")));
+        return;
+      }
+
       Global.setJwt(null);
 
       if (context.mounted) {

@@ -85,12 +85,12 @@ class _ProductPageState extends State<ProductPage> with TickerProviderStateMixin
             child: TabBar(
               controller: _controller,
                 indicator: const UnderlineTabIndicator(
-              borderSide: BorderSide(
-                  color: Colors.white,
-                  width: 2
+                borderSide: BorderSide(
+                    color: Colors.white,
+                    width: 2
+                ),
+                insets: EdgeInsets.symmetric(horizontal:1.0),
               ),
-              insets: EdgeInsets.symmetric(horizontal:1.0),
-            ),
               labelStyle: const TextStyle(fontSize: 15),
               tabs: const [
                 Tab(icon: Icon(Icons.home, size: 20,), text: "主頁", iconMargin: EdgeInsets.zero,),

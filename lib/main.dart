@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ec/product_page.dart';
 
@@ -6,7 +7,11 @@ import 'global.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Global.initSharePrefs();
-  runApp(const MyApp());
+  try {
+    runApp(const MyApp());
+  } on DioError catch (error) {
+    print(error.message);
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +27,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: '啟動頁面'),
     );
   }
+
 }
 
 class MyHomePage extends StatefulWidget {

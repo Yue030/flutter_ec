@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ec/model/buyer_order.dart';
-import 'package:flutter_ec/model/image_placeholder.dart';
+import 'package:flutter_ec/widget/image_placeholder.dart';
 import 'package:flutter_ec/util/http_util.dart';
 import 'package:flutter_ec/widget/fade_in_network_image.dart';
 

@@ -3,7 +3,7 @@ import 'package:flutter_ec/product_detail_page.dart';
 import 'package:flutter_ec/util/http_util.dart';
 import 'package:flutter_ec/widget/fade_in_network_image.dart';
 
-import 'model/image_placeholder.dart';
+import 'widget/image_placeholder.dart';
 import 'model/shopping_car.dart';
 
 class ShoppingCarPage extends StatefulWidget {
@@ -198,9 +198,6 @@ class _ShoppingCarPageState extends State<ShoppingCarPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Checkbox(fillColor: MaterialStateProperty.resolveWith((states) {
-                              if (states.contains(MaterialState.selected)) {
-                                return Colors.white;
-                              }
                               return Colors.white;
                             }), checkColor: Colors.red, value: selectAll, onChanged: (val) {
                               selectAll = !selectAll;

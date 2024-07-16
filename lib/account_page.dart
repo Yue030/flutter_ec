@@ -1,8 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ec/login_page.dart';
-import 'package:flutter_ec/model/image_placeholder.dart';
+import 'package:flutter_ec/widget/image_placeholder.dart';
 import 'package:flutter_ec/util/http_util.dart';
 import 'package:flutter_ec/widget/fade_in_network_image.dart';
 import 'global.dart';
@@ -70,9 +68,9 @@ class _AccountPageState extends State<AccountPage> {
                                 child: ClipOval(
                                   child: SizedBox.fromSize(
                                     size: const Size.fromRadius(48),
-                                    child: info == null ? ImagePlaceholder() : info.avatar != null ?
+                                    child: info == null ? const ImagePlaceholder() : info.avatar != null ?
                                       FadeInNetworkImage(url: info.avatar!.url, fit: BoxFit.cover,)
-                                        : ImagePlaceholder(),
+                                        : const ImagePlaceholder(),
                                   ),
                                 ),
                               ),
